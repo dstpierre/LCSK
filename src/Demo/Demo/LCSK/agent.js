@@ -166,8 +166,13 @@ $(function () {
         var snd = new Audio('assets/sounds/newchat.mp3');
         snd.play();
 
-        var d = new Date();
+        //when a request is made to "chat" with a client, open the client's window
+        if (!$('#chat-box').hasClass('chat-open')) {
+            $("#chat-box").slideToggle();
+        }
 
+
+        var d = new Date();
         var session = [];
         session.push('Chat started at ' + d.getHours() + ':' + d.getMinutes());
         
